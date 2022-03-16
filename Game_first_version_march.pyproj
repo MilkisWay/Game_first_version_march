@@ -23,10 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="surface.py" />
+    <Compile Include="player.py" />
     <Compile Include="Game_first_version_march.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="asaaaaq.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
