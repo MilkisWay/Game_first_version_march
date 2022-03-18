@@ -6,7 +6,7 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.Surface((64,64))
         self.image.fill('blue')
-        self.rect = self.image,get_rect(topleft=pos)
+        self.rect = self.image.get_rect(topleft=pos)
         self.direction=pygame.math.Vector2(0,0)
         self.speed = 10
 

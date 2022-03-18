@@ -1,0 +1,37 @@
+surface_map=[
+'                                                   ',   
+'                                                   ',    
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'                                                   ',
+'L                                                  ',  
+'XX                                                 ',  
+'XX                                                 ',    
+'XX                                                 ',    
+'XX                                                 ',    
+'XX                                                 ',    
+'XX                                                 ', 
+'XX                 V        V      V               ',    
+'XX               XXXX     XXXX    XXXX             ',
+'XX              XXXXXXXXXXXXXXXXXXXXXXX            ',
+'XX             XXXXXXXXXXXXXXXXXXXXXXXXX           ']
+
+tile_size = 32
+screen_width = 1920
+screen_height = len(surface_map)*tile_size
