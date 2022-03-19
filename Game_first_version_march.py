@@ -12,13 +12,13 @@ pygame.display.set_caption("Harry Potter")
 ground = Ground(surface_map,screen)
 
 #loadimages
-#background_img=pygame.image.load('background.png')#free
+background_img=pygame.image.load('Background1.jpg')
 #background1_img=pygame.image.load('background1.png')#free
 #background2_img=pygame.image.load('background2.png')#free
 #run=True?
 while True:
 
-    #screen.blit(background_img,(0,0))
+    screen.blit(background_img,(0,0))
     #screen.blit(background1_img,(0,0))
     #screen.blit(background2_img,(0,0))
 
@@ -27,7 +27,7 @@ while True:
             pygame.quit()
             sys.exit()
 
-    screen.fill('black')
+    #screen.fill('black')
     ground.run()
     pygame.display.update()
     clock.tick(60)
