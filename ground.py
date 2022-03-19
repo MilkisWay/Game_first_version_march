@@ -54,15 +54,37 @@ class Ground:
             self.world_shift_y = 0
             player.speed = 10
 
+    def horizontal_movement_collision(self):
+        player = self.player.sprite
+        player.rect.x+=player.direction.x*player.speed
+        for sprite in self.tiles.sprites():
+            if sprite.rect.colliderect(player.rect):
+                if player.direction.x <0:
+                    player.rect.left = sprite.rect.right
+                elif player.direction.x > 0:
+                    player.rect.right = sprite.rect.left
+
+    def vertical_movement_collision(self):
+        player = self.player.sprite
+        player.rect.y+=player.direction.y*player.speed
+        for sprite in self.tiles.sprites():
+           if sprite.rect.colliderect(player.rect):
+               if player.direction.y <0:
+                   player.rect.top = sprite.rect.bottom
+               elif player.direction.y > 0:
+                   player.rect.bottom = sprite.rect.top
 
     def run(self):
 
         #tiles
         self.tiles.update(self.world_shift_x,self.world_shift_y)
         self.tiles.draw(self.display_ground)
+        self.scroll_x()
 
         #player
         self.player.update()
+        self.horizontal_movement_collision()
+        self.vertical_movement_collision()
         self.player.draw(self.display_ground)
-        self.scroll_x()
+        
         #self.scroll_y()
