@@ -41,15 +41,13 @@ class Ground:
             self.world_shift_x = 0
             player.speed = 10
 
-    def scroll_y(self):#Доделать относительно неба и столкновения с землёй
+    def scroll_y(self):#Доделать Ааааааа конец
         player = self.player.sprite
         player_y=player.rect.centery
         direction_y= player.direction.y
-        if player_y == 0:
-            player.speed=0
-        elif player_y > screen_height and direction_y < 0:
+        if player_y > screen_height/4 and direction_y < 0:
             self.world_shift_y = 10
-            player.speed = 0
+            player.speed=0
         else:
             self.world_shift_y = 0
             player.speed = 10
@@ -80,6 +78,7 @@ class Ground:
         self.tiles.update(self.world_shift_x,self.world_shift_y)
         self.tiles.draw(self.display_ground)
         self.scroll_x()
+        #self.scroll_y()
 
         #player
         self.player.update()

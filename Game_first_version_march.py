@@ -1,5 +1,6 @@
 import sys
 import pygame
+from pygame.constants import DOUBLEBUF, FULLSCREEN, HWSURFACE, K_ESCAPE
 from mapp import *
 from ground import *
 #General setup
@@ -7,7 +8,7 @@ pygame.init()
 clock=pygame.time.Clock()
 
 #Game screen
-screen=pygame.display.set_mode((screen_width,screen_height))
+screen=pygame.display.set_mode((screen_width,screen_height),HWSURFACE|DOUBLEBUF,32) #add FULLSCREAN, works
 pygame.display.set_caption("Harry Potter")
 ground = Ground(surface_map,screen)
 
@@ -26,6 +27,10 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+        elif event.type == pygame.KEYDOWN:
+            if event.key == K_ESCAPE:
+                pygame.quit()
+                sys.exit()
 
     #screen.fill('black')
     ground.run()
